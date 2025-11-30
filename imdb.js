@@ -9,6 +9,8 @@ axios.get("https://imdb236.p.rapidapi.com/api/imdb/top250-movies", {
     res.data.map(film => {
         document.querySelector('#listfilm').innerHTML += templateCard(film.primaryImage, film.originalTitle, film.averageRating, film.id, film);
     })
+    document.querySelector('#loading').classList.remove("d-flex");
+    document.querySelector('#loading').classList.add("d-none");
 })
 
 const templateCard = (gambar, judul, rating, id, semua) => {
